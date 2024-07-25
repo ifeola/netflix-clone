@@ -1,0 +1,242 @@
+*,
+*::after,
+*::before {
+  /* box-sizing: border-box; */
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url(/assets/fonts/NetflixSans-Bold.woff2) format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url(/assets/fonts/NetflixSans-Medium.woff2) format("woff2");
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: "Netflix Sans";
+  src: url(/assets/fonts/NetflixSans-Regular.woff2) format("woff2");
+  font-weight: normal;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  max-width: 100%;
+  background-color: #000;
+  color: rgb(255, 255, 255);
+  font-family: "bricolage Grotesque", sans-serif;
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header {
+  overflow: visible;
+  height: 0;
+  position: relative;
+  z-index: 1;
+
+  .header-container {
+    max-width: calc(83.33333333333334% - (4.8rem * 2));
+    margin-inline: auto;
+    padding-inline: 4.8rem;
+    padding-block: 2.4rem;
+  }
+}
+
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: inline-block;
+
+  svg {
+    width: 14.8rem;
+    height: 4.5rem;
+    color: rgb(229, 9, 20);
+    fill: currentColor;
+    display: block;
+  }
+}
+
+.nav__link {
+  cursor: pointer;
+  fill: currentColor;
+  position: relative;
+  transition-duration: 250ms;
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
+  vertical-align: text-top;
+  width: auto;
+  font-size: 1.4rem;
+  font-weight: 600;
+  min-height: 2rem;
+  padding: 0.4rem 1.6rem;
+  border-radius: 0.4rem;
+  background: rgb(229, 9, 20);
+  color: rgb(255, 255, 255);
+}
+
+.nav__link:hover {
+  background: rgb(193, 17, 25);
+}
+
+/* Main */
+
+@media screen and (min-width: 960px) {
+  .hero {
+    min-height: 70rem;
+    padding: 15.328rem 0 6.4rem;
+  }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.hero__background {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.image-background {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.hero__bg-img {
+  height: 100%;
+  width: 100%;
+  -webkit-transform: scale(1.25) translateY(-10%);
+  -moz-transform: scale(1.25) translateY(-10%);
+  -ms-transform: scale(1.25) translateY(-10%);
+  transform: scale(1.25) translateY(-10%);
+  object-fit: cover;
+}
+
+.hero__bg-overlay {
+  background: rgb(0 0 0 / 40%);
+  background-image: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@media screen and (min-width: 1280px) {
+  .hero__content-bg {
+    max-width: calc(83.33333333333334% - 9.6rem);
+  }
+}
+
+.hero__content-bg {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero__content {
+  flex-basis: 50%;
+  padding: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero__content-copy {
+  font-size: 2.4rem;
+  margin-block-start: 1.6rem;
+}
+
+.form-bg {
+  margin-block-start: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 98.4rem;
+  margin-inline: auto;
+  padding-inline: 3.2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.form__container {
+  /* position: relative; */
+  max-width: 58.6rem;
+  margin-top: 2.56rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.form__heading {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.input__container {
+  max-width: 40rem;
+  width: 100%;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  position: relative;
+  display: inline-block;
+  min-height: 3.2rem;
+  border: 3px solid black;
+}
+
+.input-label {
+  position: absolute;
+  color: #000000;
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+}
+
+input {
+  padding: 2.4rem 1.6rem 0.8rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+input:focus :has(.input__container > .input-label){
+  top: 30%;
+}
